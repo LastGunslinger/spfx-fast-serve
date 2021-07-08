@@ -13,7 +13,8 @@ const settings = require("./config.json");
 const rootFolder = path.resolve(__dirname, "../");
 
 const port = settings.cli.isLibraryComponent ? 4320 : 4321;
-const host = "https://localhost:" + port;
+const hostname = settings.serve.hostname ? settings.serve.hostname : 'localhost'
+const host = `https://${hostname}:` + port;
 if (settings.cli.useRestProxy) {
   RestProxy = require('sp-rest-proxy');
 }
@@ -169,7 +170,7 @@ let baseConfig = {
     hot: false,
     contentBase: rootFolder,
     publicPath: host + "/dist/",
-    host: "localhost",
+    host: hostname,
     port: port,
     disableHostCheck: true,
     historyApiFallback: true,
