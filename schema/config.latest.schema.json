@@ -46,6 +46,10 @@
         "hotRefresh": {
           "type": "boolean",
           "description": "[SPFx 1.12+] Enables Hot Module Replacement (HMR). This feature currently is experimental. Read more at the spfx-fast-serve GitHub homepage"
+        },
+        "hostname": {
+          "type": "string",
+          "description": "The name of the host that the solution will be served on. If empty, defaults to localhost."
         }
       }
     }
